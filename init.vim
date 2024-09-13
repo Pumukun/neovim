@@ -7,6 +7,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'mrjones2014/nvim-ts-rainbow'
+Plug 'habamax/vim-godot'
+Plug 'lervag/vimtex'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -57,7 +60,7 @@ require('colorscheme')
 require('misc')
 require('settings')
 
-change_color_scheme('tender', 'dark')
+change_color_scheme('purify', 'dark')
 
 EOF
 
@@ -82,3 +85,4 @@ let g:airline_statusline_ontop=0
 let g:airline_theme='deus'
 let g:airline#extensions#tabline#formatter = 'default'
 
+let g:rainbow_active = 1
