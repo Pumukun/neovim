@@ -4,15 +4,14 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'airblade/vim-gitgutter'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'mrjones2014/nvim-ts-rainbow'
 Plug 'habamax/vim-godot'
 Plug 'lervag/vimtex'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
+Plug 'HiPhish/rainbow-delimiters.nvim'
 
 Plug 'mbbill/undotree'
 
@@ -34,7 +33,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'BurntSushi/ripgrep'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+Plug 'nvim-telescope/telescope.nvim', {'branch': '0.1.x'}
 Plug 'ryanmsnyder/toggleterm-manager.nvim'
 Plug 'akinsho/nvim-toggleterm.lua'
 
@@ -60,7 +59,7 @@ require('colorscheme')
 require('misc')
 require('settings')
 
-change_color_scheme('purify', 'dark')
+change_color_scheme('kanagawa', 'dark')
 
 EOF
 

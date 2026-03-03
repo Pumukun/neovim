@@ -1,26 +1,59 @@
-require'nvim-treesitter.configs'.setup {
-	-- A list of parser names, or "all" (the five listed parsers should always be installed)
-	ensure_installed = { "c", "cpp", "javascript", "typescript", "go", "rust", "python", "lua", "vim", "vimdoc", "query" },
+-- require('nvim-treesitter.configs').setup({
+-- 		ensure_installed = { "cpp", "c", "lua", "vim", "vimdoc", "query", "python", "javascript" },
+-- 		highlight = {
+-- 			enable = true,
+-- 		},
+-- 	})
 
-	-- Install parsers synchronously (only applied to `ensure_installed`)
-	sync_install = false,
+require("nvim-treesitter.configs").setup({
+  -- A list of parsers to ensure installed at start up.
+  ensure_installed = { "cpp", "c", "lua", "vim", "vimdoc", "query", "python", "javascript", "html" },
 
-	highlight = {
-		enable = true,
+  -- Install parsers synchronously (only applied when first installing)
+  sync_install = false,
 
-		-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-		-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-		-- Using this option may slow down your editor, and you may see some duplicate highlights.
-		-- Instead of true it can also be a list of languages
-		additional_vim_regex_highlighting = false,
-	},
+  -- Automatically install missing parsers when editing a supported file
+  auto_install = true,
 
-	rainbow = {
-		enable = true,
-		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-		max_file_lines = nil, -- Do not enable for files with more than n lines, int
-		-- colors = {}, -- table of hex strings
-		-- termcolors = {} -- table of colour name strings
-	},
-}
+  -- List of language parsers to ignore installing
+  ignore_install = { "help" },
+
+  -- Enable syntax highlighting
+  highlight = {
+    enable = true,
+    -- Set this to `true` if you want symlinks from initialised Nvim to install parsers in other places
+    install = "auto",
+    -- List of filetypes to disable highlighting for
+    disable = { "yaml" },
+    -- Or use a function for more dynamic disabling
+    -- disable = function(lang, buf)
+    --   return lang == "yaml"
+    -- end,
+  },
+
+  -- Enable indentation
+  indent = {
+    enable = true,
+    -- List of filetypes to disable indentation for
+    disable = { "python" },
+  },
+
+  -- Additional functionalities (optional)
+  -- You can add more plugins here, for example:
+  -- incremental_selection = {
+  --   enable = true,
+  --   keymaps = {
+  --     init_selection = "<c-space>",
+  --     node_incremental = "<c-f>",
+  --     scope_incremental = "<c-s>",
+  --     node_decremental = "<c-b>",
+  --   },
+  -- },
+  -- textobjects = {
+  --   enable = true,
+  --   select = {
+  --     enable = true,
+  --     -- ... keymaps for textobjects
+  --   },
+  -- },
+})
