@@ -8,6 +8,7 @@ kset('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = tru
 
 -- vim
 kset('n', '<leader>nt', ':lua NumberToggle()<CR>', { noremap = true, silent = true })
+kset('n', '<leader>qs', '<cmd>mks! session.vim<cr><cmd>wqall!<cr>', { noremap = true })
 
 -- Telescope
 kset('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true })
@@ -43,9 +44,24 @@ kset('n', '<M-0>', '<Cmd>BufferLast<CR>', opts)
 kset('n', '<leader>bp', '<Cmd>BufferPick<CR>', opts)
 
 
+-- GitGutter
+kset('n', '<leader>hl', '<cmd>GitGutterLineHighlightsToggle<cr><cmd>GitGutterLineNrHighlightsToggle<cr>', { noremap = true })
+kset('n', '<leader>nh', '<cmd>GitGutterNextHunk<cr>', { noremap = true })
+kset('n', '<leader>ph', '<cmd>GitGutterPrevHunk<cr>', { noremap = true })
+kset('n', '<leader>uh', '<cmd>GitGutterUndoHunk<cr>', { noremap = true })
+kset('n', '<leader>sh', '<cmd>GitGutterPreviewHunk<cr>', { noremap = true })
+kset('n', '<leader>dh', '<cmd>GitGutterDiffOrig<cr>', { noremap = true })
+
+
+-- dap
+kset('n', '<F5>', function() require('dap').continue() end)
+kset('n', '<F10>', function() require('dap').step_over() end)
+kset('n', '<F11>', function() require('dap').step_into() end)
+kset('n', '<F9>', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>k', function() require('dapui').eval() end)
+
 -- other
 kset('n', '<leader>rl', '<cmd>so /home/pumukun/.config/nvim/init.vim<cr>', { noremap = true, silent = true })
-kset('n', '<leader>hl', '<cmd>GitGutterLineHighlightsToggle<cr><cmd>GitGutterLineNrHighlightsToggle<cr>', { noremap = true })
 kset('n', '<leader>e', '<cmd>Ex<cr>')
 
 

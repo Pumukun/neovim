@@ -9,6 +9,7 @@ Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'habamax/vim-godot'
 Plug 'lervag/vimtex'
+Plug 'stevearc/aerial.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
 Plug 'HiPhish/rainbow-delimiters.nvim'
@@ -18,6 +19,11 @@ Plug 'mbbill/undotree'
 Plug 'Exafunction/codeium.nvim', { 'branch': 'main' }
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" nvim dap
+Plug 'mfussenegger/nvim-dap'
+Plug 'nvim-neotest/nvim-nio'
+Plug 'rcarriga/nvim-dap-ui'
 
 " NERDTree
 Plug 'scrooloose/nerdtree'
