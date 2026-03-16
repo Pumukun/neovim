@@ -12,6 +12,7 @@ Plug 'lervag/vimtex'
 Plug 'stevearc/aerial.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'HiPhish/rainbow-delimiters.nvim'
 
 Plug 'mbbill/undotree'
@@ -51,10 +52,13 @@ Plug 'romgrk/barbar.nvim'
 "colorschemes
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'junegunn/seoul256.vim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'sainnhe/sonokai'
+Plug 'Mofiqul/vscode.nvim'
+Plug 'oxidescheme/nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -65,7 +69,7 @@ require('colorscheme')
 require('misc')
 require('settings')
 
-change_color_scheme('kanagawa', 'dark')
+change_color_scheme('gruvbox-material', 'dark')
 
 EOF
 
@@ -87,7 +91,6 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop=0
-let g:airline_theme='deus'
 let g:airline#extensions#tabline#formatter = 'default'
 
 let g:rainbow_active = 1
