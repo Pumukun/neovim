@@ -1,7 +1,8 @@
 local kset = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local telescope_utils = require("telescope_utils")
 
-kset('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+kset('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
 kset('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
 kset('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
 kset('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
@@ -12,7 +13,9 @@ kset('n', '<leader>qs', '<cmd>mks! session.vim<cr><cmd>wqall!<cr>', { noremap = 
 
 -- Telescope
 kset('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true })
-kset('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true })
+kset('n', '<leader>fc', telescope_utils.find_files_cpp, { desc = 'Find C++ files' })
+kset('n', '<leader>fgg', '<cmd>Telescope live_grep<cr>', { noremap = true })
+kset('n', '<leader>fgc', telescope_utils.live_grep_cpp, { desc = 'Livegrep C++ files' })
 kset('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { noremap = true })
 kset('n', '<leader>fs', '<cmd>Telescope git_status<cr>', { noremap = true })
 kset('n', '<leader>te', '<cmd>Telescope toggleterm_manager<cr>', { noremap = true })
