@@ -1,4 +1,4 @@
 require('toggleterm').setup({
-	shell = "pwsh",
+	shell = (jit.os == "Windows") and "pwsh" or vim.o.shell,
 	size = 35
 })
