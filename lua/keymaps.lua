@@ -19,6 +19,10 @@ kset('n', '<leader>fgc', telescope_utils.live_grep_cpp, { desc = 'Livegrep C++ f
 kset('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { noremap = true })
 kset('n', '<leader>fs', '<cmd>Telescope git_status<cr>', { noremap = true })
 kset('n', '<leader>te', '<cmd>Telescope toggleterm_manager<cr>', { noremap = true })
+kset('n', '<leader>fm', '<cmd>Telescope vim_bookmarks all<cr>', { noremap = true })
+
+-- VimBookmarks
+kset('n', '<leader>b', '<cmd>BookmarkToggle<cr>', { noremap = true })
 
 -- barbar
 kset('n', '<M-Right>', '<cmd>BufferNext<cr>', opts)

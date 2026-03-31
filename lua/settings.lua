@@ -15,6 +15,15 @@ opt.scrolloff = 10
 vim.g.codeium_disable_bindings = 1
 vim.g.codeium_enabled = 0 
 
+vim.g.bookmark_no_default_key_mappings = 1
+
 
 -- |, ¦, ┆, ┊
-vim.cmd'set list lcs=tab:\\¦\\ '
+-- vim.cmd'set list lcs=tab:\\¦\\ '
+opt.list = true
+opt.listchars = {
+	tab = '¦ ',
+	space = '·',
+	trail = '×',
+	-- eol = '',
+}

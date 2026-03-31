@@ -15,6 +15,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'HiPhish/rainbow-delimiters.nvim'
 
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+
 Plug 'mbbill/undotree'
 
 Plug 'Exafunction/codeium.nvim', { 'branch': 'main' }
