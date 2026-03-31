@@ -24,6 +24,8 @@ Plug 'Exafunction/codeium.nvim', { 'branch': 'main' }
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'CopilotC-Nvim/CopilotChat.nvim'
+
 " nvim dap
 Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-neotest/nvim-nio'
