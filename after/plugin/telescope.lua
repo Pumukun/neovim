@@ -33,7 +33,14 @@ require "telescope".setup{
 			col2_width = 0,
 			show_columns = "both",
 		},
+		coc = {
+			prefer_locations = true,
+			push_cursor_on_edit = true,
+			timeout = 3000,
+			path_display = { "smart" }
+		}
 	},
 }
 
 require('telescope').load_extension('vim_bookmarks')
+require('telescope').load_extension('coc')

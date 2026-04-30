@@ -48,6 +48,7 @@ Plug 'BurntSushi/ripgrep'
 Plug 'nvim-telescope/telescope.nvim', {'branch': '0.1.x'}
 Plug 'ryanmsnyder/toggleterm-manager.nvim'
 Plug 'akinsho/nvim-toggleterm.lua'
+Plug 'fannheyward/telescope-coc.nvim'
 
 " barbar
 Plug 'nvim-tree/nvim-web-devicons' " OPTIONAL: for file icons
@@ -97,5 +98,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop=0
 let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#lsp#enabled = 1
+
+set updatetime=300
 
 let g:rainbow_active = 1
+
+set nofixendofline
+set noendofline
