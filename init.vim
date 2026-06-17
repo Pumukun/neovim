@@ -10,6 +10,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'habamax/vim-godot'
 Plug 'lervag/vimtex'
 Plug 'stevearc/aerial.nvim'
+Plug 'junegunn/vim-easy-align'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
@@ -75,21 +76,21 @@ require('colorscheme')
 require('misc')
 require('settings')
 
-change_color_scheme('gruvbox-material', 'dark')
+change_color_scheme('sonokai', 'dark')
 
 EOF
 
 nnoremap <silent> gt :call <SID>toggle_diagnostics()<CR>
 
 function! s:toggle_diagnostics()
-  if coc#util#get_config('diagnostic').enable
-    set signcolumn=yes
-    call coc#config('diagnostic', { 'enable': v:false })
-  else
-    set signcolumn=yes
-    call coc#config('diagnostic', { 'enable': v:true })
-  endif
-  silent call coc#rpc#restart()
+	if coc#util#get_config('diagnostic').enable
+		set signcolumn=yes
+		call coc#config('diagnostic', { 'enable': v:false })
+	else
+		set signcolumn=yes
+		call coc#config('diagnostic', { 'enable': v:true })
+	endif
+	silent call coc#rpc#restart()
 endfunction
 
 " vim airline
@@ -106,3 +107,5 @@ let g:rainbow_active = 1
 
 set nofixendofline
 set noendofline
+
+xmap ga <Plug>(EasyAlign)

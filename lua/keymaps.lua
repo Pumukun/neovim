@@ -21,6 +21,9 @@ kset('n', '<leader>fs', '<cmd>Telescope git_status<cr>', { noremap = true })
 kset('n', '<leader>te', '<cmd>Telescope toggleterm_manager<cr>', { noremap = true })
 kset('n', '<leader>fm', '<cmd>Telescope vim_bookmarks all<cr>', { noremap = true })
 
+-- ToggleTerm
+kset('n', '<C-\\>', '<cmd>ToggleTerm direction=float<cr>', { noremap = true })
+
 -- VimBookmarks
 kset('n', '<leader>b', '<cmd>BookmarkToggle<cr>', { noremap = true })
 
@@ -57,7 +60,7 @@ kset('n', '<leader>nh', '<cmd>GitGutterNextHunk<cr>', { noremap = true })
 kset('n', '<leader>ph', '<cmd>GitGutterPrevHunk<cr>', { noremap = true })
 kset('n', '<leader>uh', '<cmd>GitGutterUndoHunk<cr>', { noremap = true })
 kset('n', '<leader>sh', '<cmd>GitGutterPreviewHunk<cr>', { noremap = true })
-kset('n', '<leader>dh', '<cmd>GitGutterDiffOrig<cr>', { noremap = true })
+kset('n', '<leader>do', '<cmd>GitGutterDiffOrig<cr>', { noremap = true })
 
 
 -- dap
@@ -71,5 +74,15 @@ vim.keymap.set('n', '<Leader>k', function() require('dapui').eval() end)
 kset('n', '<leader>rl', '<cmd>so /home/pumukun/.config/nvim/init.vim<cr>', { noremap = true, silent = true })
 kset('n', '<leader>e', '<cmd>Ex<cr>')
 
+function _G.set_terminal_keymaps()
+	local opts = {buffer = 0}
+	vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+	vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+	vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+	vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+	vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+end
+
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 

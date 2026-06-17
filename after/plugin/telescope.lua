@@ -17,7 +17,6 @@ require "telescope".setup{
 			"package-lock.json",
 			"%.jpg",
 			"%.png",
-			"%.asset",
 			"%.svg",
 		},
 		path_display = { "smart" }

@@ -4,14 +4,14 @@ local M = {}
 function M.find_files_cpp()
 	builtin.find_files({
 		prompt_title = "C++ Source Files",
-		find_command = { 
-			"fd", 
-			"--type", "f", 
-			"-e", "cpp", 
-			"-e", "hpp", 
-			"-e", "cc", 
-			"-e", "hh", 
-			"-e", "c", 
+		find_command = {
+			"fd",
+			"--type", "f",
+			"-e", "cpp",
+			"-e", "hpp",
+			"-e", "cc",
+			"-e", "hh",
+			"-e", "c",
 			"-e", "h",
 			"-e", "cxx",
 			"-e", "hxx",
